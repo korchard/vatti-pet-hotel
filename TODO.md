@@ -2,7 +2,7 @@
 - [] index.html
     [x] h1 Pet Hotel
     [x] h2 Add Pets
-    [x] Three inputs: name, color, breed
+    [x] Three inputs: name, color, breed, owner
     [x] Submit Button
     [] h2 Guest List
     [] Table with TR: Pet Name, Breed, Color, Checked In, actions(Delete & Check In Button), Owner name
@@ -37,12 +37,12 @@
 
 
 - MAIN
-- [] database.sql
+- [x] database.sql
 - [x] .gitignore
 
 - SQL table:
-- [] Name database
-    - [] CREATE TABLE
+- [x] Name database
+    - [x] CREATE TABLE
     -use dogs in wireframe for some data
     
 Install - 
