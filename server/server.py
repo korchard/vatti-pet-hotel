@@ -31,10 +31,42 @@ def close_db_conn(taco):
         app.config['postgreSQL_pool'].putconn(db)
         print('Closing connection!')
 
-# # Get all songs 
-# @app.route('/song', methods=['GET', 'POST'])
-# def songStuff():
-#     if request.method == 'GET':
-#         return getAllSongs()
-#     elif request.method == 'POST': 
-#         return addSong( request.form )
+# Get all pets
+@app.route('/pets', methods=['GET', 'POST'])
+def petStuff():
+    if request.method == 'GET':
+        return getAllPets()
+    elif request.method == 'POST': 
+        return addPet( request.form )
+
+def addPet(animal):
+    print('Adding pet', animal)
+
+    cursor = None
+    response = None
+
+    try:
+        # Get a connection to database, use that to get a cursor
+        conn = get_db_conn()
+        cursor = conn.cursor()
+
+        # TODO Database INSERT
+        sql = 'INSERT INTO pets ("pet", "breed", "color", "owner") VALUES (%s, %s, %s, %s);'
+        cursor.execute(sql, (animal['pet'], animal['breed'], animal['color'], animal['owner'])) # pass in values as a tupple, which uses ()
+
+        # IMPORTANT - FOR Add, Update, Delete - Make sure to commit!!! Or you will not see your changes
+        conn.commit()
+        response = {'msg': 'Added pet'}, 201
+
+        # Python equivalent of catch
+    except psycopg2.Error as e:
+        print('Error from DB', e.pgerror)
+        response = {'msg': 'Error adding pet'}, 500
+
+    # python equivalent of finally
+    else: # this else statment will run regardless!
+        if cursor:
+            # Close the cursor
+            cursor.close()
+    
+    return response
