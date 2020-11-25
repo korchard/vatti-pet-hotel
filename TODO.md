@@ -1,12 +1,12 @@
 - PUBLIC
-- [] index.html
+- [x] index.html
     [x] h1 Pet Hotel
     [x] h2 Add Pets
     [x] Three inputs: name, color, breed, owner
     [x] Submit Button
-    [] h2 Guest List
-    [] Table with TR: Pet Name, Breed, Color, Checked In, actions(Delete & Check In Button), Owner name
-    [] Require in CSS, js, jquery
+    [x] h2 Guest List
+    [x] Table with TR: Pet Name, Breed, Color, Checked In, actions(Delete & Check In Button), Owner name
+    [x] Require in CSS, js, jquery
 - [] client.js
     [] on Ready - calls GET function
         [] click handlers for
