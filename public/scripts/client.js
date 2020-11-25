@@ -90,14 +90,26 @@ function renderPets(newPets){
     $('#petHotel').empty();
     for (let item of newPets){
         //append to dom
-        $('#petHotel').append(`<tr data-id="${item[0]}" data-status="${item[4]}">
+        if(item[4]==='No'){
+            $('#petHotel').append(`<tr data-id="${item[0]}" data-status="${item[4]}">
                                <td>${item[1]}</td>
                                <td>${item[2]}</td>
                                <td>${item[3]}</td>
                                <td>${item[4]}</td>
-                               <td><button class="statusBtn btn btn-outline-info">Checked In</button></td>
+                               <td><button class="statusBtn btn btn-outline-info">Check In</button></td>
                                <td><button class="deleteBtn btn btn-outline-info">Delete</button></td>
                                <td>${item[5]}</td>
                                </tr>`);
-  } //end for loop
+        } else {
+            $('#petHotel').append(`<tr data-id="${item[0]}" data-status="${item[4]}">
+                               <td>${item[1]}</td>
+                               <td>${item[2]}</td>
+                               <td>${item[3]}</td>
+                               <td>${item[4]}</td>
+                               <td><button class="statusBtn btn btn-outline-info">Check Out</button></td>
+                               <td><button class="deleteBtn btn btn-outline-info">Delete</button></td>
+                               <td>${item[5]}</td>
+                               </tr>`);
+        }
+    } //end for loop
 }//end renderPets
