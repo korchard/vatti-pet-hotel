@@ -1,3 +1,6 @@
+DATABASE NAME: pet_hotel
+
+
 # Pet Hotel Project
 
 > NOTE: __Do not fork this repository.__ Instead, create your own repository from scratch.
