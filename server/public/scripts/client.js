@@ -1,5 +1,5 @@
 console.log('hello from JS');
-$document.ready(readyNow);
+$(document).ready(readyNow);
 
 function readyNow() {
     console.log('in jQuery');
@@ -12,7 +12,6 @@ function readyNow() {
 function submitPet(){
     let petObject = {
         name: $('#name-in').val(),
-        type: $('#type-in').val(),
         breed: $('#breed-in').val(),
         color: $('#color-in').val(),
         owner: $('owner-in').val(),
@@ -24,7 +23,6 @@ function submitPet(){
     })
     .then(function(response) {
         $('#name-in').val('');
-        $('#type-in').val('');
         $('#breed-in').val('');
         $('#color-in').val('');
         $('#owner-in').val('');
@@ -87,13 +85,14 @@ function renderPets(pets){
     $('#petHotel').empty();
     for (let item of pets){
         //append to dom
-        $('#petHotel').append(`<tr data-id"${item.id}">
+        $('#petHotel').append(`<tr data-id="${item.id}" data-status="${item.checked_in}">
+                               <td>${item.name}</td>
                                <td>${item.breed}</td>
                                <td>${item.color}</td>
-                               <td>${item.checkedIn}</td>
-                               <td><button class="deleteBtn">Delete</button></td>
+                               <td>${item.checked_in}</td>
                                <td><button class="statusBtn">Checked In</button></td>
-                               <td>${item.ownerName}</td>
+                               <td><button class="deleteBtn">Delete</button></td>
+                               <td>${item.owner}</td>
                                </tr>`);
   } //end for loop
 }//end renderPets
