@@ -35,13 +35,13 @@ def close_db_conn(taco):
 @app.route('/pets', methods=['GET', 'POST'])
 def petStuff():
     if request.method == 'GET':
-        return getAllPets()
+        return getPets()
     elif request.method == 'POST': 
         return addPet( request.form )
 
 def addPet(animal):
     print('Adding pet', animal)
-
+    
     cursor = None
     response = None
 
