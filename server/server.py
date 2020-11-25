@@ -70,3 +70,20 @@ def addPet(animal):
             cursor.close()
     
     return response
+
+def getPets():
+    # Get a connection to database, use that to get a cursor
+    conn = get_db_conn()
+    cursor = conn.cursor()
+
+    # Run our select query on the cursor
+    cursor.execute('SELECT * FROM pets ORDER BY checked_in, pet;')
+
+    # Get our results
+    result = cursor.fetchall()
+
+    # IMPORTANT!! - CLOSE the cursor
+    cursor.close()
+
+    # Send back results
+    return {'pets': result}
