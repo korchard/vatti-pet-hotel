@@ -24,16 +24,16 @@
 
 - SERVER
 - [] app.py
-    - [] import Flask, redirect, g, request, psycopg2, psycopg2.pool
-    - [] app = Flask(__name__, static_folder="public", static_url_path="")
-    - [] app Route to index.html
-    - [] set up db connection
-    - [] connect to db function to use in each route function
-    - [] get pets function
-    - [] Add pet function
+    - [x] import Flask, redirect, g, request, psycopg2, psycopg2.pool
+    - [x] app = Flask(__name__, static_folder="public", static_url_path="")
+    - [x] app Route to index.html
+    - [x] set up db connection
+    - [x] connect to db function to use in each route function
+    - [x] get pets function
+    - [x] Add pet function
     - [] Delete pet funciton
     - [] Update checked in status (PUT??)
-    - [] close db function
+    - [x] close db function
 
 
 - MAIN

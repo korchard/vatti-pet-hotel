@@ -11,10 +11,10 @@ function readyNow() {
 
 function submitPet(){
     let petObject = {
-        name: $('#name-in').val(),
+        pet: $('#name-in').val(),
         breed: $('#breed-in').val(),
         color: $('#color-in').val(),
-        owner: $('owner-in').val(),
+        owner: $('#owner-in').val(),
     }
     $.ajax({
         type: 'POST',
@@ -26,7 +26,7 @@ function submitPet(){
         $('#breed-in').val('');
         $('#color-in').val('');
         $('#owner-in').val('');
-        getPets();
+        getPets(response);
     })
     .catch(function (error) {
         console.log('Error:', error);
@@ -65,6 +65,7 @@ function checkInPet() {
         alert('No bueno! There is an ERROR!');
     }) // end ajax request
 } // end checkInPet function 
+
 //start getPets
 function getPets() {
     console.log('in getPets');
@@ -74,25 +75,29 @@ function getPets() {
       url: '/pets'
     }).then(function (response) { //run renderPets once you get okay response
       console.log(response)
-      renderPets(response);
+      let newPets = response.pets;
+      console.log(newPets);
+      renderPets(newPets);
     }).catch(function (error) {
       console.log('Error in client.js GET', error)
     });
   } // end getPets
 
-function renderPets(pets){
+function renderPets(newPets){
+    console.log('In renderPets');
+    
     //empty so no repeated table items
     $('#petHotel').empty();
-    for (let item of pets){
+    for (let item of newPets){
         //append to dom
-        $('#petHotel').append(`<tr data-id="${item.id}" data-status="${item.checked_in}">
-                               <td>${item.name}</td>
-                               <td>${item.breed}</td>
-                               <td>${item.color}</td>
-                               <td>${item.checked_in}</td>
+        $('#petHotel').append(`<tr data-id="${item[0]}" data-status="${item[4]}">
+                               <td>${item[1]}</td>
+                               <td>${item[2]}</td>
+                               <td>${item[3]}</td>
+                               <td>${item[4]}</td>
                                <td><button class="statusBtn">Checked In</button></td>
                                <td><button class="deleteBtn">Delete</button></td>
-                               <td>${item.owner}</td>
+                               <td>${item[5]}</td>
                                </tr>`);
   } //end for loop
 }//end renderPets
