@@ -56,7 +56,7 @@ def changeCheckIn(id, petStatus):
     if petStatus == 'No':
         # TODO Database INSERT
         sql = 'UPDATE pets SET checked_in=%s WHERE id =%s;'
-        cursor.execute(sql, (date.today(), id)) # pass in values as a tupple, which uses ()
+        cursor.execute(sql, (date.today().strftime("%b-%d-%Y"), id)) # pass in values as a tupple, which uses ()
     else:
         sql = 'UPDATE pets SET checked_in=%s WHERE id =%s;'
         cursor.execute(sql, ('No', id))
