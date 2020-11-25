@@ -15,8 +15,8 @@
             [] check in/out toggle
     [] GET route - calls render function
     [] POST route - calls GET function
-    [] DELETE route - calls GET function
-    [] PUT route - calls GET function
+    [x] DELETE route - calls GET function
+    [x] PUT route - calls GET function
     [] Render info to the DOM
 - [] style.css
 - [] jquery.min.css
