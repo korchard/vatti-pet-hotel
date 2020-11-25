@@ -8,18 +8,18 @@
     [x] Table with TR: Pet Name, Breed, Color, Checked In, actions(Delete & Check In Button), Owner name
     [x] Require in CSS, js, jquery
 - [] client.js
-    [] on Ready - calls GET function
-        [] click handlers for
-            [] submit button
-            [] delete button
+    [x] on Ready - calls GET function
+        [x] click handlers for
+            [x] submit button
+            [x] delete button
             [] check in/out toggle
-    [] GET route - calls render function
-    [] POST route - calls GET function
+    [x] GET route - calls render function
+    [x] POST route - calls GET function
     [x] DELETE route - calls GET function
     [x] PUT route - calls GET function
-    [] Render info to the DOM
-- [] style.css
-- [] jquery.min.css
+    [x] Render info to the DOM
+- [x] style.css
+- [x] jquery.min.css
 - [] bootstrap (probably)
 
 - SERVER
