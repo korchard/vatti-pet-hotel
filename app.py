@@ -39,6 +39,31 @@ def petStuff():
     elif request.method == 'POST': 
         return addPet( request.form )
 
+# Endpoint for deleting a record
+@app.route("/pets/<id>", methods=["DELETE"])
+# Endpoint for deleting a record
+def deletePet(id):
+
+#elif request.method == 'DELETE':
+        #return deletePet(request.args)
+        
+    # Get a connection to database, use that to get a cursor
+    conn = get_db_conn()
+    cursor = conn.cursor()
+
+    # TODO Database INSERT
+    sql = 'DELETE FROM pets WHERE id =%s;'
+    cursor.execute(sql, (id)) # pass in values as a tupple, which uses ()
+    
+    # IMPORTANT - FOR Add, Update, Delete - Make sure to commit!!! Or you will not see your changes
+    conn.commit()
+    response = {'msg': 'Pet is lost or stolen'}, 201
+ 
+    # IMPORTANT!! - CLOSE the cursor
+    cursor.close()
+
+    return response
+
 def addPet(animal):
     print('Adding pet', animal)
     

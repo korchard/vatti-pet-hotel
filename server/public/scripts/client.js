@@ -1,20 +1,21 @@
 console.log('hello from JS');
-$(document).ready(readyNow);
+$document.ready(readyNow);
 
 function readyNow() {
     console.log('in jQuery');
     $('#submitBtn').on('click', submitPet);
-    $('#petHotel').on('click', '.deleteBtn', deletePet);
-    $('#petHotel').on('click', '.statusBtn', checkInPet);
+    $('#deleteBtn').on('click', deletePet);
+    $('#statusBtn').on('click', checkInPet);
     getPets();
 }
 
 function submitPet(){
     let petObject = {
-        pet: $('#name-in').val(),
+        name: $('#name-in').val(),
+        type: $('#type-in').val(),
         breed: $('#breed-in').val(),
         color: $('#color-in').val(),
-        owner: $('#owner-in').val(),
+        owner: $('owner-in').val(),
     }
     $.ajax({
         type: 'POST',
@@ -23,10 +24,11 @@ function submitPet(){
     })
     .then(function(response) {
         $('#name-in').val('');
+        $('#type-in').val('');
         $('#breed-in').val('');
         $('#color-in').val('');
         $('#owner-in').val('');
-        getPets(response);
+        getPets();
     })
     .catch(function (error) {
         console.log('Error:', error);
@@ -65,7 +67,6 @@ function checkInPet() {
         alert('No bueno! There is an ERROR!');
     }) // end ajax request
 } // end checkInPet function 
-
 //start getPets
 function getPets() {
     console.log('in getPets');
@@ -75,29 +76,24 @@ function getPets() {
       url: '/pets'
     }).then(function (response) { //run renderPets once you get okay response
       console.log(response)
-      let newPets = response.pets;
-      console.log(newPets);
-      renderPets(newPets);
+      renderPets(response);
     }).catch(function (error) {
       console.log('Error in client.js GET', error)
     });
   } // end getPets
 
-function renderPets(newPets){
-    console.log('In renderPets');
-    
+function renderPets(pets){
     //empty so no repeated table items
     $('#petHotel').empty();
-    for (let item of newPets){
+    for (let item of pets){
         //append to dom
-        $('#petHotel').append(`<tr data-id="${item[0]}" data-status="${item[4]}">
-                               <td>${item[1]}</td>
-                               <td>${item[2]}</td>
-                               <td>${item[3]}</td>
-                               <td>${item[4]}</td>
-                               <td><button class="statusBtn">Checked In</button></td>
+        $('#petHotel').append(`<tr data-id"${item.id}">
+                               <td>${item.breed}</td>
+                               <td>${item.color}</td>
+                               <td>${item.checkedIn}</td>
                                <td><button class="deleteBtn">Delete</button></td>
-                               <td>${item[5]}</td>
+                               <td><button class="statusBtn">Checked In</button></td>
+                               <td>${item.ownerName}</td>
                                </tr>`);
   } //end for loop
 }//end renderPets
