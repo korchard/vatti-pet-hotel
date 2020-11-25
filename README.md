@@ -1,52 +1,55 @@
-DATABASE NAME: pet_hotel
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+![REPO SIZE](https://img.shields.io/github/repo-size/korchard/vatti-pet-hotel.svg?style=flat-square)
+![TOP_LANGUAGE](https://img.shields.io/github/languages/top/korchard/vatti-pet-hotel.svg?style=flat-square)
+![FORKS](https://img.shields.io/github/forks/korchard/vatti-pet-hotel.svg?style=social)
+
+# Project Name
+
+Vatti-Pet-Hotel
+
+## Description
+
+Duration: 7 hours
+
+This application simulates a basic intake for a Pet Resort customer. Users can input their name, pets name, breed, and color. Once the pet is submitted their information will be displayed and stored in the table. You can toggle the check in status of the pet by clicking the Check In button and the date will be displayed. After the pet has left the hotel one can delete the pet's information from the table using the delete button. 
 
 
-# Pet Hotel Project
+## Screen shot
 
-> NOTE: __Do not fork this repository.__ Instead, create your own repository from scratch.
+The application in action
+![Application in Action](pet_hotel.png)
 
+##Installation
 
-## Objectives
+Required packages:
+- gitHub repository files
 
-- build a full-stack application, writing the backend in a new language
-- build confidence w/ SQL statements for CRUD
+From the command line:
+1. Navigate to the parent directory:
+1. Type 'pip install - r requirements.txt'
+2. Type 'export FLASK_APP=server.py'
+3. Type 'flask run'
 
-## Technology
+Open your web browser:
+1. enter the address, "localhost:5000"
+2. Use the application
 
-- Python / Flask (web framework)
-  - `psycopg2` for DB connection and queries
+##Built With
 
-We are replacing our Node/Express/PG server with other serverside tech. Your RESTful API server needs to be able to route requests, respond, and talk to our PostGRES database.
+- HTML
+- CSS/Bootstrap
+- JavaScript
+- jQuery
+- Python
+- Flask
 
-Be sure to try to focus your Googling to API Servers with these stacks. There are tutorials for all of these where the focus is to get a basic REST API server up and running.
+## License
+[MIT](https://choosealicense.com/licenses/mit/)
 
-The client side should remain jQuery. 
+## Acknowledgement
+Thanks to [Prime Digital Academy](www.primeacademy.io) who equipped helped me make this application a reality. Special thanks to my primary instructor, [Mary Mossman](https://github.com/mbMosman)
 
-## Features
-
-- Add pets
-- Remove pets
-- Check in / out a pet
-
-### Wireframes
-
-#### Dashboard View
-
-![Add Entry Page](page-one.png)
-
-### Database
-
-Start with a table for **pets**. When base features are complete, add more tables as needed for stretch goals.
-
-## Documentation
-
-Before moving on past Base features, please take time to comment your code and otherwise document what you've learned about your new server side technology stack. The rest of your cohort will benefit from your trailblazing!
-
-## Other Features
-
-- Add a new table & form for owners
-  - For an owner we want to store owner name and a phone number
-  - Add a column to the pet table for owner name, and this to the pet table and form. 
-- Add the count of the total number of pets & owners registered to the main page
-
-
+Special thanks to my learning group for this week from my Vatti Cohort:
+- [Kim Orchard](https://github.com/korchard)
+- [Josie Fredericksen](https://github.com//freder48)
+- [Steven Maloney](https://github.com/sdeda1us)
