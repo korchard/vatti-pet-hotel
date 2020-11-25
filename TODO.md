@@ -45,9 +45,10 @@
     - [x] CREATE TABLE
     -use dogs in wireframe for some data
     
-Install - 
+Install
     - [x] venv 
     - [x] Python -m venv venv
     - [x] . venv/bin/activate 
     - [x] pip freeze > requirements.txt
     - [x] pip install -r requirements.txt
+    - [x] commit
