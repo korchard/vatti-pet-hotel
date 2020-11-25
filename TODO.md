@@ -20,7 +20,7 @@
     [x] Render info to the DOM
 - [x] style.css
 - [x] jquery.min.css
-- [] bootstrap (probably)
+- [x] bootstrap (probably)
 
 - SERVER
 - [] app.py
@@ -31,7 +31,7 @@
     - [x] connect to db function to use in each route function
     - [x] get pets function
     - [x] Add pet function
-    - [] Delete pet funciton
+    - [x] Delete pet funciton
     - [] Update checked in status (PUT??)
     - [x] close db function
 

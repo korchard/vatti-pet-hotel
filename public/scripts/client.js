@@ -95,8 +95,8 @@ function renderPets(newPets){
                                <td>${item[2]}</td>
                                <td>${item[3]}</td>
                                <td>${item[4]}</td>
-                               <td><button class="statusBtn">Checked In</button></td>
-                               <td><button class="deleteBtn">Delete</button></td>
+                               <td><button class="statusBtn btn btn-outline-info">Checked In</button></td>
+                               <td><button class="deleteBtn btn btn-outline-info">Delete</button></td>
                                <td>${item[5]}</td>
                                </tr>`);
   } //end for loop

@@ -12,18 +12,20 @@
         <link rel="stylesheet" href="styles/style.css">
     </head>
     <body>
-        <h1>Pet Hotel</h1>
-        <section>
+        <header id="banner">
+        <h1>Meow Bark Boutique</h1>
+        </header>
+        <section id="inputs">
             <h2>Add Pets</h2>
             <input id="name-in" type="text" placeholder="Pet Name">
             <input id="breed-in" type="text" placeholder="Pet Breed">
             <input id="color-in" type="text" placeholder="Color">
             <input id="owner-in" type="text" placeholder="Owner is">
-            <button id="submitBtn">Submit</button>
+            <button id="submitBtn" class="btn btn-outline-info">Submit</button>
         </section>
         <section>
             <h2>Guest List</h2>
-            <table>
+            <table class="table">
                 <thead>
                     <tr>
                         <th>Pet Name</th>
@@ -31,6 +33,7 @@
                         <th>Color</th>
                         <th>Checked In</th>
                         <th>Actions</th>
+                        <th></th>
                         <th>Owner Name</th>
                     </tr>
                 </thead>
