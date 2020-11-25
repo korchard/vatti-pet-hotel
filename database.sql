@@ -9,9 +9,15 @@ CREATE TABLE pets (
 
 INSERT INTO pets ("pet", "breed", "color", "checked_in", "owner")
 VALUES 
-('Charlie', 'Shih-tzu', 'Black', 'no', 'Lou'),
-('Thorin', 'Rabbit', 'White', 'no', 'Sue'),
+('Charlie', 'Shih-tzu', 'Black', 'No', 'Lou'),
+('Thorin', 'Rabbit', 'White', 'No', 'Sue'),
 ('Gatsby', 'Cat', 'White', '5/5/18', 'Mo'),
-('Juniper', 'Cat', 'Tabby', 'no', 'Jo');  
+('Juniper', 'Cat', 'Tabby', 'No', 'Jo');  
+
+SELECT * FROM pets ORDER BY checked_in, pet;
+
+DELETE FROM pets WHERE id=3;
+
+UPDATE pets SET "checked_in"='5/10/18' WHERE id=7;
 
 SELECT * FROM pets;

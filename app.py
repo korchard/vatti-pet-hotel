@@ -1,4 +1,5 @@
 from flask import Flask, redirect, g, request
+from datetime import date
 import psycopg2.pool
 
 app = Flask(__name__, static_folder="public", static_url_path="")
@@ -39,14 +40,35 @@ def petStuff():
     elif request.method == 'POST': 
         return addPet( request.form )
 
-# Endpoint for deleting a record
-@app.route("/pets/<id>", methods=["DELETE"])
-# Endpoint for deleting a record
+# Delete and Put routes
+@app.route("/pets/<id>", methods=["DELETE", "PUT"])
+def deleteOrPut(id):
+    if request.method == 'DELETE':
+        return deletePet(id)
+    elif request.method == 'PUT':
+        return changeCheckIn(id, request.form['petStatus'])
+
+def changeCheckIn(id, petStatus):
+     # Get a connection to database, use that to get a cursor
+    conn = get_db_conn()
+    cursor = conn.cursor()
+
+    # TODO Database INSERT
+    sql = 'UPDATE pets SET checked_in=%s WHERE id =%s;'
+    cursor.execute(sql, (date.today(), id)) # pass in values as a tupple, which uses ()
+    
+    # IMPORTANT - FOR Add, Update, Delete - Make sure to commit!!! Or you will not see your changes
+    conn.commit()
+    response = {'msg': 'Pet is checking in or out'}, 201
+ 
+    # IMPORTANT!! - CLOSE the cursor
+    cursor.close()
+
+    return response
+
+
 def deletePet(id):
 
-#elif request.method == 'DELETE':
-        #return deletePet(request.args)
-        
     # Get a connection to database, use that to get a cursor
     conn = get_db_conn()
     cursor = conn.cursor()
