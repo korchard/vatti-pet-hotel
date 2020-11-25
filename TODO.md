@@ -1,12 +1,12 @@
 - PUBLIC
-- [] index.html
+- [x] index.html
     [x] h1 Pet Hotel
     [x] h2 Add Pets
     [x] Three inputs: name, color, breed, owner
     [x] Submit Button
-    [] h2 Guest List
-    [] Table with TR: Pet Name, Breed, Color, Checked In, actions(Delete & Check In Button), Owner name
-    [] Require in CSS, js, jquery
+    [x] h2 Guest List
+    [x] Table with TR: Pet Name, Breed, Color, Checked In, actions(Delete & Check In Button), Owner name
+    [x] Require in CSS, js, jquery
 - [] client.js
     [] on Ready - calls GET function
         [] click handlers for
@@ -15,8 +15,8 @@
             [] check in/out toggle
     [] GET route - calls render function
     [] POST route - calls GET function
-    [] DELETE route - calls GET function
-    [] PUT route - calls GET function
+    [x] DELETE route - calls GET function
+    [x] PUT route - calls GET function
     [] Render info to the DOM
 - [] style.css
 - [] jquery.min.css
