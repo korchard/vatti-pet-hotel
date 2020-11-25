@@ -53,9 +53,13 @@ def changeCheckIn(id, petStatus):
     conn = get_db_conn()
     cursor = conn.cursor()
 
-    # TODO Database INSERT
-    sql = 'UPDATE pets SET checked_in=%s WHERE id =%s;'
-    cursor.execute(sql, (date.today(), id)) # pass in values as a tupple, which uses ()
+    if petStatus == 'No':
+        # TODO Database INSERT
+        sql = 'UPDATE pets SET checked_in=%s WHERE id =%s;'
+        cursor.execute(sql, (date.today(), id)) # pass in values as a tupple, which uses ()
+    else:
+        sql = 'UPDATE pets SET checked_in=%s WHERE id =%s;'
+        cursor.execute(sql, ('No', id))
     
     # IMPORTANT - FOR Add, Update, Delete - Make sure to commit!!! Or you will not see your changes
     conn.commit()
