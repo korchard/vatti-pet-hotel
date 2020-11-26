@@ -43,6 +43,7 @@ Open your web browser:
 - Python
 - Flask
 - psycopg2
+- SQL
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
