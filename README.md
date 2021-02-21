@@ -27,7 +27,7 @@ The application in action
 5. Activate the space by inputting '. venv/bin/activate' into the terminal.
 6. The required dependencies are already tied to the repository in the requirements.txt
 7. Type 'pip install - r requirements.txt' into the terminal, this will install all necessary requirements.
-8. We will need to run Flas by inputting 'export FLASK_APP=app.py' in the terminal
+8. We will need to run Flask by inputting 'export FLASK_APP=app.py' in the terminal
 9. 'flask run' in the terminal will run the application
 
 Open your web browser:
